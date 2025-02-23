@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("°è´Ü")]
+    [Header("ê³„ë‹¨")]
     [Space(10)]
     public GameObject[] Stairs;
     public bool[] isTurn;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         state = State.Start;
         oldPosition = Vector3.zero;
 
-        isTurn = new bool[Stairs.Length]; //ÃÊ±âÈ­
+        isTurn = new bool[Stairs.Length]; //ì´ˆê¸°í™”
 
         for (int i = 0; i < Stairs.Length; i++)
         {
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //¾Ö´Ï¸ÞÀÌ¼ÇÀÌ ³¡³ª´Â Å¸ÀÌ¹Ö
+        //ì• ë‹ˆë©”ì´ì…˜ì´ ëë‚˜ëŠ” íƒ€ì´ë°
         StartCoroutine(ShowGameOver());
     }
 

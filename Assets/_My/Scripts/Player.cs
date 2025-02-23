@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private int turnCount = 0;
     private int spawnCount = 0;
 
-    private bool isDie = false; //false·Î ÃÊ±âÈ­
+    private bool isDie = false; //falseë¡œ ì´ˆê¸°í™”
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Init() // »ç¸Á½Ã ¾Ö´Ï¸ŞÀÌ¼Ç
+    private void Init() // ì‚¬ë§ì‹œ ì• ë‹ˆë©”ì´ì…˜
     {
         anim.SetBool("Die", false);
         transform.position = StartPosition;
@@ -66,14 +66,14 @@ public class Player : MonoBehaviour
         MoveDirection();
 
         if (isFailTurn())
-        { // Àß¸øµÈ ¹æÇâÀ¸·Î °¡¸é »ç¸Á
+        { // ì˜ëª»ëœ ë°©í–¥ìœ¼ë¡œ ê°€ë©´ ì‚¬ë§
             CharDie();
-            return; // »ç¸ÁÇß´Ù¸é ÇÔ¼ö¸¦ ºüÁ®³ª°¡°Ô ÇÔ
+            return; // ì‚¬ë§í–ˆë‹¤ë©´ í•¨ìˆ˜ë¥¼ ë¹ ì ¸ë‚˜ê°€ê²Œ í•¨
         }
 
         if (moveCount > 5)
         {
-            //°è´Ü ½ºÆù
+            //ê³„ë‹¨ ìŠ¤í°
             RespawnStair();
         }
 
@@ -84,21 +84,21 @@ public class Player : MonoBehaviour
 {
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
-        if (isTurn == true) // ¸¸¾à¿¡ ¹İ´ëÂÊÀ¸·Î ÀÖ´Ù¸é ¹æÇâÀ» ¹Ù²ã¶ó
+        if (isTurn == true) // ë§Œì•½ì— ë°˜ëŒ€ìª½ìœ¼ë¡œ ìˆë‹¤ë©´ ë°©í–¥ì„ ë°”ê¿”ë¼
         {
             CharTurn();
             isTurn = false;
         }
-        oldPosition += new Vector3(0.75f, 0.5f, 0); // ÇÑ Ä­ ¿òÁ÷ÀÓ
+        oldPosition += new Vector3(0.75f, 0.5f, 0); // í•œ ì¹¸ ì›€ì§ì„
     }
     else if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
-        if (isTurn == false) // ¸¸¾à¿¡ ¹İ´ëÂÊÀ¸·Î ÀÖ´Ù¸é ¹æÇâÀ» ¹Ù²ã¶ó
+        if (isTurn == false) // ë§Œì•½ì— ë°˜ëŒ€ìª½ìœ¼ë¡œ ìˆë‹¤ë©´ ë°©í–¥ì„ ë°”ê¿”ë¼
         {
             CharTurn();
             isTurn = true;
         }
-        oldPosition += new Vector3(-0.75f, 0.5f, 0); // ÇÑ Ä­ ¿òÁ÷ÀÓ
+        oldPosition += new Vector3(-0.75f, 0.5f, 0); // í•œ ì¹¸ ì›€ì§ì„
     }
 
     transform.position = oldPosition;
@@ -109,10 +109,10 @@ public class Player : MonoBehaviour
     //{
     //    if (Input.GetKeyDown(KeyCode.RightArrow))
     //    {
-    //        if (isTurn == true) //¸¸¾à¿¡ ¹İ´ëÂÊÀ¸·Î ÀÖ´Ù¸é ¹æÇâÀ» ¹Ù²ã¶ó
+    //        if (isTurn == true) //ë§Œì•½ì— ë°˜ëŒ€ìª½ìœ¼ë¡œ ìˆë‹¤ë©´ ë°©í–¥ì„ ë°”ê¿”ë¼
     //        {
     //            CharTurn();
-    //            //¹æÇâÀÌ ÀüÈ¯µÈ »óÅÂ¸¦ true·Î ¹Ù²Ş
+    //            //ë°©í–¥ì´ ì „í™˜ëœ ìƒíƒœë¥¼ trueë¡œ ë°”ê¿ˆ
     //            return;
     //        }
     //        oldPosition += new Vector3(0.75f, 0.5f, 0);
